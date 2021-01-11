@@ -16,10 +16,20 @@ tornado.options.parse_command_line()
 ilog.info("Starting db")
 
 try:
+    _mongo_user = db_settings['mongo_user'] if db_settings['mongo_host'] else ''
+    _mongo_pass = db_settings['mongo_pass'] if db_settings['mongo_host'] else ''
     _mongo_host = db_settings['mongo_host'] if db_settings['mongo_host'] else 'localhost'
     _mongo_port = db_settings['mongo_port'] if db_settings['mongo_port'] else 27017
+    _mongo_connect_params = db_settings['mongo_connect_params'] if db_settings['mongo_connect_params'] else ''
 
-    _db = motor.motor_tornado.MotorClient(_mongo_host, _mongo_port).dbtickets
+    if _mongo_user:
+        
+        _conn_uri = 'mongodb://{user}:{pswd}@{host}:{port}{connect_params}'.format(user=_mongo_user, pswd=_mongo_pass, host=_mongo_host, port=_mongo_port, connect_params=_mongo_connect_params)
+        _client = motor.motor_tornado.MotorClient(_mongo_host, _mongo_port)
+    else:
+        _client = motor.motor_tornado.MotorClient(_mongo_host, _mongo_port).dbtickets
+
+    _db = _client.dbtickets
 
     _db_conn_sts = True
     ilog.info("[Mongo] - DB connection has established!")

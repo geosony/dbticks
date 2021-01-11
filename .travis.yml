@@ -1,0 +1,34 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t geosony/dbt-spa -f ./spa/Dockerfile.dev ./spa
+
+script:
+  - docker run -e CI=true geosony/dbt-spa npm run test
+
+after_success:
+  - docker build -t geosony/dbt-spa ./client
+  - docker build -t geosony/dbt-proxy ./proxy
+  - docker build -t geosony/dbt-server ./web
+
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  # Take those images and push into docker hub
+  - docker push geosony/dbt-spa
+  - docker push geosony/dbt-proxy
+  - docker push geosony/dbt-server
+
+deploy:
+  provider: elastickbeanstalk
+  region: ap-south-1
+  app: dbt-docker
+  env: DBtDocker-env
+  bucket_name: elasticbeanstalk-ap-south-1-433581887735
+  bucket_path: docker-dbt
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

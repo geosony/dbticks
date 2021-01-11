@@ -1,0 +1,33 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "spa",
+            "image": "geosony/dbt-spa",
+            "hostname": "spa",
+            "essenstial": false,
+            "memory": 128
+        },
+        {
+            "name": "server",
+            "image": "geosony/dbt-server",
+            "hostname": "api",
+            "essenstial": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "geosony/dbt-proxy",
+            "hostname": "nginx",
+            "essenstial": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["spa", "server"],
+            "memory": 128
+        }
+    ]
+}
