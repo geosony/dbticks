@@ -1,0 +1,87 @@
+<nav class="bread-crumb">
+  <ul>
+    <li><a color="primary">Tickets</a></li>
+  </ul>
+  <button (click)="onClickAdd()" mat-mini-fab  color="primary"><mat-icon>add</mat-icon></button>
+</nav>
+
+<section class="search">
+    <mat-form-field appearance="fill">
+      <mat-label>Jira ID</mat-label>
+      <input matInput maxlength="20" [(ngModel)]="searchParams.jid" placeholder="Ex. Support-1234">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="searchParams.sts">
+        <mat-option value="">All</mat-option>
+        <mat-option value="1">Open</mat-option>
+        <mat-option value="2">In Progress</mat-option>
+        <mat-option value="3">Closed</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>From Date</mat-label>
+      <input matInput  [matDatepicker]="picker" [(ngModel)]="searchParams.fdt">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>To Date</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="searchParams.tdt">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="onClickSearch()" color="primary"><mat-icon>search</mat-icon>  Search</button>
+</section>
+
+<div class="list-container mat-elevation-z8">
+
+
+  <table mat-table color="" [dataSource]="dataSource">
+
+    <ng-container matColumnDef="sino">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.sino}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef> State </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="jiraID">
+      <th mat-header-cell *matHeaderCellDef> Jira ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.jiraID}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="module">
+      <th mat-header-cell *matHeaderCellDef> Module </th>
+      <td mat-cell *matCellDef="let element"> {{element.module}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> <button (click)="onClickViewDetails(element._id)" mat-raised-button color="accent">View Details</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

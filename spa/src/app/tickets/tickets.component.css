@@ -1,0 +1,23 @@
+.list-container {
+  /*height: 400px;*/
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.search button {
+  margin-left:1em;
+}
+
+mat-form-field {
+  margin-right: 0.5em;
+}

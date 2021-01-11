@@ -1,0 +1,60 @@
+mat-form-field {
+  width:92%;
+}
+.mat-grid-tile .mat-figure {
+   justify-content: flex-start !important ;
+   /*align-items: flex-start !important;*/
+}
+#query {
+  padding:1em;
+}
+
+.q-tle {
+  color: #9c27b0;
+  width:40%;
+}
+
+.q-tle, .q-vle {
+  font-size: .9em;
+}
+
+.q-vle {
+  color: #777;
+  margin-left:0.4em;
+  width:60%;
+}
+
+#actions {
+  display:flex;
+  justify-content:space-between;
+}
+
+#compare-sheet li {
+  margin:0.4em 0;
+  display:flex;
+  justify-content:flex-start;
+  flex:1;
+}
+#compare-sheet li a {
+  width: 50%;
+  color: #2196f3;
+  margin-right: 0.8em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.progress {
+  width:98%;
+  border:1px solid #f6f6f6;
+}
+.progress span {
+  float: left;
+  text-align: right;
+  background:#9c27b0;
+  color:#fff;
+}
+
+.loading {
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}

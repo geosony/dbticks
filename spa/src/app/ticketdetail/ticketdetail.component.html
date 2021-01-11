@@ -1,0 +1,154 @@
+<div>
+  <nav class="bread-crumb">
+    <ul>
+      <li><a (click)="onClickBack('tickets')" color="primary"><mat-icon color="primary">arrow_back</mat-icon></a></li>
+      <li><a color="primary">Tickets</a></li>
+      <li><a color="primary">/ {{ticket.jiraID}}</a></li>
+    </ul>
+    <a *ngIf="viewonly" (click)="onClickEdit()"><mat-icon color="primary">edit</mat-icon></a>
+    <a *ngIf="!viewonly" (click)="onClickSave()"><mat-icon color="primary">save</mat-icon></a>
+  </nav>
+
+  <section class="form">
+    <mat-grid-list cols="4" rowHeight="5em">
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>Jira ID</mat-label>
+          <input [disabled]="viewonly" [(ngModel)]="ticket.jiraID" matInput placeholder="Placeholder" />
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>Reported Date</mat-label>
+          <input [disabled]="viewonly" matInput [matDatepicker]="picker" matInput [(ngModel)]="ticket.reportedDate" placeholder="Placeholder" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <mat-select [disabled]="viewonly" [(ngModel)]="ticket.status">
+            <mat-option value="">All</mat-option>
+            <mat-option value="1">Open</mat-option>
+            <mat-option value="2">In Progress</mat-option>
+            <mat-option value="3">Closed</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Team</mat-label>
+          <mat-select [disabled]="viewonly" [(ngModel)]="ticket.team">
+            <mat-option value="">All</mat-option>
+            <mat-option value="1">Care</mat-option>
+            <mat-option value="2">Cash</mat-option>
+            <mat-option value="3">Command</mat-option>
+            <mat-option value="4">Comprehend</mat-option>
+            <mat-option value="5">Coordination</mat-option>
+            <mat-option value="6">Core</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2">
+        <mat-form-field appearance="standard">
+          <mat-label>Title</mat-label>
+          <input
+            [disabled]="viewonly"
+            [(ngModel)]="ticket.title"
+            matInput
+            placeholder="Placeholder"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2">
+        <mat-form-field appearance="standard">
+          <mat-label>Module</mat-label>
+          <input [disabled]="viewonly" matInput [(ngModel)]="ticket.module" placeholder="Placeholder" />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </section>
+  <mat-divider></mat-divider>
+
+  <section id="query">
+    <div>
+      <mat-grid-list cols="4" rowHeight="3em" justify="flex-start">
+        <mat-grid-tile colspan="4">
+          <input [disabled]="viewonly" [(ngModel)]="query.title" matInput placeholder="Query Title" />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+            <input [disabled]="viewonly" [(ngModel)]="query.fix" matInput placeholder="Updated Query/Index" />
+          </mat-grid-tile>
+        <mat-grid-tile>
+          <span class="q-tle">Time</span>
+          <span class="q-vle">: {{query.time}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">DB</span>
+          <span class="q-vle">: {{query.dbName}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">Host</span>
+          <span class="q-vle">: {{query.host}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">IP</span>
+          <span class="q-vle">: {{query.ip}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">Query Time</span>
+          <span class="q-vle">: {{query.execTime}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">Lock Time</span>
+          <span class="q-vle">: {{query.lockTime}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">Rows Sent</span>
+          <span class="q-vle">: {{query.rowsSent}}</span>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <span class="q-tle">Rows Examined</span>
+          <span class="q-vle">: {{query.rowsExamined}}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <p>
+        <textarea highlight-js lang="sql" [innerHTML]="query.halfQuery"></textarea>
+      </p>
+
+      <div id="actions">
+        <div>
+          <button mat-raised-button [disabled]="isLoading" (click)="onClickCompare()" color="primary" style="margin-right:1em;">
+            Compare
+          </button>
+          <button mat-raised-button color="accent">Duplicate</button>
+        </div>
+        <div>
+          <button mat-button [cdkCopyToClipboard]="query.fullQuery"><mat-icon>content_copy</mat-icon></button>
+        </div>
+      </div>
+    </div>
+    <div class="loading" *ngIf="isLoading">
+        <mat-progress-spinner
+        class="progressSpinner"
+        color="primary"
+        mode="indeterminate"
+        value="50">
+    </mat-progress-spinner>
+    </div>
+  </section>
+</div>

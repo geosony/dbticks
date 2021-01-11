@@ -1,0 +1,10 @@
+<ul id="compare-sheet">
+  <li>
+    <h3>Similarity with other Queries</h3>
+  </li>
+
+  <li *ngFor="let c of comparisonData">
+    <a [routerLink]="['tickets', c._id]">{{c.jiraID}}</a>
+    <div class="progress"><span style="width:{{c.sim}}%;">{{c.sim}}%</span></div>
+  </li>
+</ul>

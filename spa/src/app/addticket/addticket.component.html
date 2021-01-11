@@ -1,0 +1,89 @@
+<nav class="bread-crumb">
+  <ul>
+      <li><a (click)="onClickBack('tickets')" color="primary"><mat-icon color="primary">arrow_back</mat-icon></a></li>
+      <li><a color="primary">Tickets</a></li>
+    <li><a color="primary">/ Add New Ticket</a></li>
+  </ul>
+</nav>
+
+<section class="form">
+  <form [formGroup]="myForm">
+  <mat-grid-list cols="2" rowHeight="4em">
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput #input maxlength="255" formControlName="title" placeholder="Give some title to identify the ticket" />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Jira ID</mat-label>
+        <input matInput #input maxlength="20"  formControlName="jiraID" placeholder="Ex. Support-1234" />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="0">All</mat-option>
+          <mat-option value="1">Open</mat-option>
+          <mat-option value="2">In Progress</mat-option>
+          <mat-option value="3">Closed</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Reported Date</mat-label>
+        <input matInput [matDatepicker]="picker"  formControlName="repDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Module</mat-label>
+        <input matInput #input maxlength="20"  formControlName="module" placeholder="Eg: Controller::Method" />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Team</mat-label>
+        <mat-select  formControlName="team">
+          <mat-option value="">All</mat-option>
+          <mat-option value="1">Care</mat-option>
+          <mat-option value="2">Cash</mat-option>
+          <mat-option value="3">Command</mat-option>
+          <mat-option value="4">Comprehend</mat-option>
+          <mat-option value="5">Coordination</mat-option>
+          <mat-option value="6">Core</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="columns">
+        <mat-label *ngIf="selectedFile; else newFile">{{ (selectedFile.name !== undefined) ? selectedFile.name : '' }}</mat-label>
+        <ng-template #newFile>
+          <mat-label>Choose file</mat-label>
+        </ng-template>
+        <input matInput disabled />
+        <button mat-icon-button matSuffix (click)="fileInput.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+        <input hidden (change)="onChangeFile($event)" #fileInput  type="file" id="file" />
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <button mat-raised-button style="margin-right:2em;" (click)="onSubmit()" color="primary">Submit</button>
+      <button mat-raised-button color="warn">Cancel</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+</section>

@@ -1,0 +1,55 @@
+04 Jan, 2021  06:29:47:28 +00:00(UTC) - INFO - settings  - Starting db
+04 Jan, 2021  06:29:47:31 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+04 Jan, 2021  10:58:07:48 +00:00(UTC) - INFO - endpoints  - POST "sqry.log" "application/octet-stream" 8750783 bytes
+04 Jan, 2021  10:58:08:69 +00:00(UTC) - INFO - endpoints  - 5ff2f4c016659ada51f22aac
+04 Jan, 2021  10:58:51:30 +00:00(UTC) - INFO - endpoints  - POST "sqry1.log" "application/octet-stream" 15681 bytes
+04 Jan, 2021  10:58:51:32 +00:00(UTC) - INFO - endpoints  - 5ff2f4eb16659ada51f22aad
+04 Jan, 2021  10:58:51:33 +00:00(UTC) - INFO - endpoints  - 5ff2f4eb16659ada51f22aae
+04 Jan, 2021  10:58:51:33 +00:00(UTC) - INFO - endpoints  - 5ff2f4eb16659ada51f22aaf
+04 Jan, 2021  10:58:51:34 +00:00(UTC) - INFO - endpoints  - 5ff2f4eb16659ada51f22ab0
+05 Jan, 2021  05:33:16:70 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  05:33:16:73 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  05:35:18:51 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  05:35:18:53 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  05:37:46:84 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  05:37:46:87 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  05:43:24:42 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  05:43:24:47 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:05:15:48 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:05:15:52 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:06:32:71 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:06:32:74 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:09:35:47 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:09:35:49 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:11:57:76 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:11:57:80 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:13:10:57 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:13:10:60 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:25:00:58 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:25:00:64 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:32:03:16 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:32:03:23 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:33:17:36 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:33:17:39 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:35:28:51 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:35:28:55 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:39:53:95 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:39:53:98 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:43:13:92 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:43:13:95 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:44:47:94 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:44:47:96 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:49:10:74 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:49:10:77 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:50:20:24 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:50:20:26 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:54:09:19 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:54:09:22 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:55:35:39 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:55:35:42 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:56:51:02 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:56:51:04 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:57:24:65 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:57:24:67 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!
+05 Jan, 2021  06:58:23:63 +00:00(UTC) - INFO - settings  - Starting db
+05 Jan, 2021  06:58:23:68 +00:00(UTC) - INFO - settings  - [Mongo] - DB connection has established!

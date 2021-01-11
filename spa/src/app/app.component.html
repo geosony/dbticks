@@ -1,0 +1,31 @@
+<div class="wrapper">
+
+  <header color="primary">
+    <div id="logo">
+        <img src="assets/images/logo.svg" />
+    </div>
+    <nav id="main">
+      <ul *ngIf="menu">
+        <li>
+          <a (click)="onClickMenu('dashboard')" mat-button  [ngClass]="{'mat-flat-button': (page == 'dashboard')}" color="accent">Dashboard</a>
+        </li>
+        <li>
+          <a (click)="onClickMenu('tickets')" mat-button [ngClass]="{'mat-flat-button': (page == 'tickets')}" color="accent">Tickets</a>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul>
+        <li>
+            <a (click)="onClickMenu('login')" mat-button color="accent"><mat-icon>logout</mat-icon></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="content">
+
+    <router-outlet></router-outlet>
+  </section>
+
+</div>
