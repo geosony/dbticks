@@ -2,18 +2,12 @@ sudo: required
 services:
   - docker
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 
 before_install:
   - docker build -t geosony/dbt-spa -f ./spa/Dockerfile.dev ./spa
 
 script:
-  - docker run -e CI=true geosony/dbt-spa npm run test
+  - docker run -e CI=true geosony/dbt-spa npm run build
 
 after_success:
   - docker build -t geosony/dbt-spa ./client
