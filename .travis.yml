@@ -5,6 +5,8 @@ services:
 before_install:
   - docker build -t geosony/dbt-spa -f ./spa/Dockerfile.dev ./spa
 
+script:
+  - docker run -e CI=true geosony/dbt-spa npm run test
 
 after_success:
   - docker build -t geosony/dbt-spa ./client
