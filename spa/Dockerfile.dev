@@ -1,7 +1,7 @@
 FROM node:alpine
 
-RUN apk add chromium-browser && \
-    export CHROME_BIN='/usr/bin/chromium-browser'
+RUN apk add chromium && \
+    export CHROME_BIN='/usr/bin/chromium'
 
 WORKDIR /app
 
