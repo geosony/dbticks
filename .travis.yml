@@ -3,10 +3,11 @@ services:
   - docker
 
 before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
   - docker build -t geosony/dbt-spa -f ./spa/Dockerfile.dev ./spa
 
 script:
-  - export CHROME_BIN='/usr/bin/chromium-browser'
   - docker run -e CI=true geosony/dbt-spa npm run test
 
 after_success:
