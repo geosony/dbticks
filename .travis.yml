@@ -4,7 +4,7 @@ services:
 
 script:
 
-  - docker build -t geosony/dbt-spa ./client
+  - docker build -t geosony/dbt-spa ./spa
   - docker build -t geosony/dbt-proxy ./proxy
   - docker build -t geosony/dbt-server ./web
 
