@@ -23,9 +23,8 @@ _mongo_connect_params = db_settings['mongo_connect_params'] if db_settings['mong
 _conn_uri = ''
 
 if _mongo_user:
-    
+
     _conn_uri = 'mongodb://{user}:{pswd}@{host}:{port}{connect_params}'.format(user=_mongo_user, pswd=_mongo_pass, host=_mongo_host, port=_mongo_port, connect_params=_mongo_connect_params)
-    
     ilog.info("CONNECTION_URI: {}".format(_conn_uri))
 
 try:
@@ -46,11 +45,8 @@ except Exception as e:
     ilog.critical("[Mongo] - DB connection has failed - {}".format(e))
     elog.critical("[Mongo] - DB connection has failed - {}".format(e))
 
-
-
 settings = {}
 settings['debug'] = options.debug 
 settings['cookie_secret'] = "dbtockets@ZhS3cr3T" 
 settings['mongo_conn_sts'] = _db_conn_sts
 settings['mongo'] = _db
-
