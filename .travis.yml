@@ -19,8 +19,8 @@ after_success:
 deploy:
   provider: elastickbeanstalk
   region: ap-south-1
-  app: dbt-docker
-  env: DBtDocker-env
+  app: dbt-multi-docker
+  env: DbtMultiDocker-env
   bucket_name: elasticbeanstalk-ap-south-1-433581887735
   bucket_path: docker-dbt
   on:

@@ -20,15 +20,12 @@ _mongo_pass = db_settings['mongo_pass'] if db_settings['mongo_pass'] else ''
 _mongo_host = db_settings['mongo_host'] if db_settings['mongo_host'] else 'localhost'
 _mongo_port = db_settings['mongo_port'] if db_settings['mongo_port'] else 27017
 _mongo_connect_params = db_settings['mongo_connect_params'] if db_settings['mongo_connect_params'] else ''
-_conn_uri = ''
 
-if _mongo_user:
+_conn_uri = db_settings['mongo_uri_connect'] if db_settings['mongo_uri_connect'] else ''
 
-    _conn_uri = 'mongodb://{user}:{pswd}@{host}:{port}{connect_params}'.format(user=_mongo_user, pswd=_mongo_pass, host=_mongo_host, port=_mongo_port, connect_params=_mongo_connect_params)
-    ilog.info("CONNECTION_URI: {}".format(_conn_uri))
+ilog.info("CONNECTION_URI: {}".format(_conn_uri))
 
 try:
-
     if _conn_uri:
         _client = motor.motor_tornado.MotorClient(_conn_uri)
     else:

@@ -26,5 +26,6 @@ db_settings['mongo_db'] = config['mongo']['db']
 db_settings['mongo_user'] = os.environ.get("MONGO_USER") if platform == "docker" else config["mongo"]["user"]
 db_settings['mongo_pswd'] = os.environ.get("MONGO_PSWD") if platform == "docker" else config["mongo"]["pass"]
 db_settings['mongo_connect_params'] = os.environ.get("MONGO_CONNECT_PARAMS") if platform == "docker" else config["mongo"]["connect_params"]
+db_settings['mongo_uri_connect'] = os.environ.get("MONGO_URI_CONNECT") if platform == "docker" else config["mongo"]["conn_uri"]
 
 print(db_settings)
