@@ -1,2 +1,4 @@
-web/uploads
+web/__pycache__/*
+web/logs/*
+web/uploads/*
 spa/node_modules

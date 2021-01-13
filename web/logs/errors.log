@@ -1,3 +1,0 @@
-'time': 30 Dec, 2020  11:37:18:42 +00:00(UTC), 'level': CRITICAL, 'file': settings.py, 'line': 28, 'msg': [Mongo] - DB connection has failed - port must be an instance of int
-'time': 30 Dec, 2020  11:37:56:60 +00:00(UTC), 'level': CRITICAL, 'file': settings.py, 'line': 29, 'msg': [Mongo] - DB connection has failed - port must be an instance of int
-'time': 30 Dec, 2020  11:40:57:30 +00:00(UTC), 'level': CRITICAL, 'file': settings.py, 'line': 30, 'msg': [Mongo] - DB connection has failed - port must be an instance of int

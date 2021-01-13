@@ -16,7 +16,7 @@ tornado.options.parse_command_line()
 ilog.info("Starting db")
 
 _mongo_user = db_settings['mongo_user'] if db_settings['mongo_user'] else ''
-_mongo_pass = db_settings['mongo_pass'] if db_settings['mongo_pass'] else ''
+_mongo_pswd = db_settings['mongo_pswd'] if db_settings['mongo_pswd'] else ''
 _mongo_host = db_settings['mongo_host'] if db_settings['mongo_host'] else 'localhost'
 _mongo_port = db_settings['mongo_port'] if db_settings['mongo_port'] else 27017
 _mongo_connect_params = db_settings['mongo_connect_params'] if db_settings['mongo_connect_params'] else ''
