@@ -2,18 +2,13 @@ sudo: required
 services:
   - docker
 
-
-before_install:
-  - docker build -t geosony/dbt-spa -f ./spa/Dockerfile.dev ./spa
-
 script:
-  - docker run -e CI=true geosony/dbt-spa npm run build
 
-after_success:
   - docker build -t geosony/dbt-spa ./client
   - docker build -t geosony/dbt-proxy ./proxy
   - docker build -t geosony/dbt-server ./web
 
+after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
