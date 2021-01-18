@@ -54,11 +54,25 @@ export class AddticketComponent implements OnInit {
     formData.append('module', this.myForm.get('module')!.value);
     formData.append('team', this.myForm.get('team')!.value);
     formData.append('file', this.myForm.get('fileSource')!.value);
+    console.log(formData);
 
     this.http.post(`${environment.serviceUrl}api/upload`, formData)
       .subscribe(res => {
         alert('Uploaded Successfully.');
       })
+  }
+
+  changeEvent(e:any) {
+    const date = new Date(e.value);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = (date.getDate()).toString().padStart(2, '0');
+    const hour = (date.getHours()).toString().padStart(2, '0');
+    const minute = (date.getMinutes()).toString().padStart(2, '0');
+    const second = (date.getSeconds()).toString().padStart(2, '0');
+
+    const dateStr = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+    this.myForm.patchValue({'repDate': dateStr });
   }
 
 }
